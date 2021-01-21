@@ -857,31 +857,31 @@ namespace Data_Structure_Exercises
     #endregion
 
     #region 31. Find First Repeated Element In Array
-    public class FindRepeated
-    {
+    //public class FindRepeated
+    //{
 
-        public int findRepeated(int[] arr, int size)
-        {
-            int i;
-            int max = int.MinValue;
-            int[] hash;
-            Array.Sort(arr);
-            for(i = 0; i < size; i++)
-            {
+    //    public int findRepeated(int[] arr, int size)
+    //    {
+    //        int i;
+    //        int max = int.MinValue;
+    //        int[] hash;
+    //        Array.Sort(arr);
+    //        for(i = 0; i < size; i++)
+    //        {
 
-                if (arr[i] > max)
-                {
-                    max = arr[i];
-                    return max;
-                }
+    //            if (arr[i] > max)
+    //            {
+    //                max = arr[i];
+    //                return max;
+    //            }
 
              
-            }
+    //        }
        
-            return 0;
+    //        return 0;
             
-        }
-    }
+    //    }
+    //}
     #endregion
 
 
