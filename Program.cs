@@ -875,16 +875,64 @@ namespace Data_Structure_Exercises
     //                return max;
     //            }
 
-             
+
     //        }
-       
+
     //        return 0;
-            
+
     //    }
     //}
     #endregion
 
+    #region Extension Methods
+        public class Product
+        {
 
+        IEnumerable<Product> Products { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+    }
+    public class ShoppingCart : IEnumerable<Product>
+    {
+        public IEnumerable<Product> Products { get; set; }
+        public IEnumerator<Product> GetEnumerator()
+        {
+            return Products.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+      
+    }
+    public static class MyExtensionMethods
+    {
+        public static decimal TotalPrices(this IEnumerable<Product> products)
+        {
+            decimal total = 0;
+            foreach (Product prod in products)
+            {
+                total += prod?.Price ?? 0;
+            }
+
+            return total;
+        }
+    }
+    public class Main
+    {
+        ShoppingCart cart = new ShoppingCart();
+
+        Product[] productArray = {
+        };
+
+       //cart.TotalPrices()
+
+       //product.TotalPrices()
+      
+    }
+    #endregion
 
 
 
